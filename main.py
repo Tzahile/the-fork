@@ -23,11 +23,11 @@ def main() -> int:
 
     # create data
     message = ApiMessage(
-        action_run_link="https://link-to-github-or-another-forge.example.com/your/repository/actions/runs/run_id",  # fill me in later
+        action_run_link=getenv("ACTION_RUN_LINK"),
         email=getenv("PRIVATE_EMAIL"),
         name=getenv("PRIVATE_NAME"),
         repository_link="https://github.com/Tzahile/the-fork",
-        resume_link="https://pdf-or-html-or-linkedin.example.com",  # fill me in later
+        resume_link="https://github.com/Tzahile/the-fork/blob/main/.assets/Isaac%20Lehmann.pdf",
         timestamp=get_iso8601(),
     )
     compact_payload = message.to_json().encode("utf-8")
